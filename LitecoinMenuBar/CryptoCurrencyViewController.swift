@@ -33,7 +33,7 @@ class CryptoCurrencyViewController: NSViewController {
 
 extension CryptoCurrencyViewController {
 
-    // MARK: Storyboard instantiation
+    // Storyboard instantiation
     static func instantiateController() -> CryptoCurrencyViewController {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: "CryptoCurrencyViewController") as? CryptoCurrencyViewController else {

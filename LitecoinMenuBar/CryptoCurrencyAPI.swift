@@ -23,16 +23,12 @@ class CryptoCurrencyAPI {
             // Check the response code
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
-                case 200...299:
+                case 200:
                     if let exchangeRate = self.exchangeRateFromJSONData(data!, from: cryproCurrency, to: realCurrency) {
                         success(exchangeRate)
                     }
-                case 400...499:
-                    NSLog("cryptocompare API returned Client Error response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                case 500...599:
-                    NSLog("cryptocompare API returned Server Error response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
                 default:
-                    NSLog("cryptocompare API returned response: %d %@", httpResponse.statusCode, HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                    NSLog(HTTPResponse.init(statusCode: httpResponse.statusCode).description)
                 }
             }
         }
@@ -50,9 +46,37 @@ class CryptoCurrencyAPI {
             return nil
         }
 
-        var currency = json[cryproCurrency] as! JSONDict
-        let exchangeRate = currency[realCurrency] as! Double
+        guard let currency = json[cryproCurrency] as? JSONDict else {
+            return nil
+        }
+
+        guard let exchangeRate = currency[realCurrency] as? Double else {
+            return nil
+        }
 
         return exchangeRate
     }
+
+}
+
+struct HTTPResponse: CustomStringConvertible {
+    var statusCode: Int
+
+    var description: String {
+        var errorDescription: String
+
+        switch statusCode {
+        case 300...399:
+            errorDescription = "Redirection"
+        case 400...499:
+            errorDescription = "Client Error"
+        case 500...599:
+            errorDescription = "Server Error"
+        default:
+            errorDescription = ""
+        }
+
+        return "cryptocompare API returned response with status code: \(statusCode) \(errorDescription) \(HTTPURLResponse.localizedString(forStatusCode: statusCode)) "
+    }
+
 }
