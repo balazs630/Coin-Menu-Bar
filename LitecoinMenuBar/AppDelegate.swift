@@ -16,15 +16,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-
-        statusItem.title = "--"
+        statusItem.title = "LTC/EUR: ----"
         statusItem.action = #selector(togglePopover(_:))
 
-        popover.contentViewController = LitecoinViewController.freshController()
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        popover.contentViewController = CryptoCurrencyViewController.instantiateController()
     }
 
     @objc func togglePopover(_ sender: Any?) {
@@ -45,4 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.performClose(sender)
     }
 
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
 }

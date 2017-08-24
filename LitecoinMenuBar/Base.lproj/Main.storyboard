@@ -660,10 +660,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Litecoin View Controller-->
+        <!--Crypto Currency View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="LitecoinViewController" id="XfG-lQ-9wD" customClass="LitecoinViewController" customModule="LitecoinMenuBar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CryptoCurrencyViewController" id="XfG-lQ-9wD" customClass="CryptoCurrencyViewController" customModule="LitecoinMenuBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="352" height="186"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -676,7 +676,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="refreshBtnClicked:" target="XfG-lQ-9wD" id="spU-aA-3gR"/>
+                                    <action selector="getCurrentExchangeRate:" target="XfG-lQ-9wD" id="7PH-1L-yIP"/>
                                 </connections>
                             </button>
                         </subviews>
