@@ -10,25 +10,12 @@ import Cocoa
 
 class CryptoCurrencyViewController: NSViewController {
 
-    let cryptoCurrency = "LTC"
-    let realCurrency = "EUR"
+    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
 
-    let appDelegate = NSApplication.shared().delegate as! AppDelegate
-    let cryptoCurrencyAPI = CryptoCurrencyAPI()
-
-    @IBAction func getCurrentExchangeRate(_ sender: Any) {
-        cryptoCurrencyAPI.fetchExchangeRate(from: cryptoCurrency, to: realCurrency) { exchangeRate in
-            self.updateUIElements(exchangeRate)
-        }
+    @IBAction func updateBtnPressed(_ sender: Any) {
+        cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
 
-    func updateUIElements(_ exchangeRate: Double) {
-        // Do UI updates on the main thread
-        DispatchQueue.main.async {
-            // For example "LTC\EUR: 44.56
-            self.appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.realCurrency): \(exchangeRate)"
-        }
-    }
 }
 
 extension CryptoCurrencyViewController {

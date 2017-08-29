@@ -676,7 +676,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="getCurrentExchangeRate:" target="XfG-lQ-9wD" id="7PH-1L-yIP"/>
+                                    <action selector="updateBtnPressed:" target="XfG-lQ-9wD" id="zvN-0b-JTe"/>
                                 </connections>
                             </button>
                         </subviews>

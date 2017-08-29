@@ -11,36 +11,53 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
-    let popover = NSPopover()
+    let statusItem: NSStatusItem
+    let popover: NSPopover
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        statusItem.title = "LTC/EUR: ----"
-        statusItem.action = #selector(togglePopover(_:))
+    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
+    var timer = Timer()
 
+    override init() {
+        statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+        statusItem.title = "---/---: ----"
+        statusItem.action = #selector(togglePopover)
+
+        popover = NSPopover()
         popover.contentViewController = CryptoCurrencyViewController.instantiateController()
     }
 
-    @objc func togglePopover(_ sender: Any?) {
-        if popover.isShown {
-            closePopover(sender: sender)
-        } else {
-            showPopover(sender: sender)
-        }
+    func updateData() {
+        NSLog("update data")
+        cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
 
-    func showPopover(sender: Any?) {
-        if let button = statusItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-        }
-    }
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
 
-    func closePopover(sender: Any?) {
-        popover.performClose(sender)
+        // Update data on first launch
+        updateData()
+
+        // Set timer to fetch data every 30 seconds
+        timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(updateData), userInfo: nil, repeats: true)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+}
+
+// Actions
+extension AppDelegate {
+
+    func togglePopover(_ sender: Any?) {
+        if popover.isShown {
+            // Close popover
+            popover.performClose(sender)
+        } else {
+            // Show popover
+            if let button = statusItem.button {
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            }
+        }
     }
 }

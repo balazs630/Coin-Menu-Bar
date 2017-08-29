@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */; };
 		AC59A1EB1F4E06DB00AF3B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */; };
 		AC59A1EF1F4E06DB00AF3B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */; };
 		AC59A1F21F4E06DB00AF3B86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1F01F4E06DB00AF3B86 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyMonitor.swift; sourceTree = "<group>"; };
 		AC59A1E71F4E06DB00AF3B86 /* LitecoinMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LitecoinMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				AC59A1FF1F4E099900AF3B86 /* CryptoCurrencyViewController.swift */,
+				AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */,
 				ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */,
 				AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */,
 				AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			files = (
 				ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */,
 				AC59A2001F4E099900AF3B86 /* CryptoCurrencyViewController.swift in Sources */,
+				AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */,
 				AC59A1EB1F4E06DB00AF3B86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
