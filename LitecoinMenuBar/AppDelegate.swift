@@ -27,7 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func updateData() {
-        NSLog("update data")
         cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
 
