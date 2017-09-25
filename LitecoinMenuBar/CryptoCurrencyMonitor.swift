@@ -25,7 +25,7 @@ class CryptoCurrencyMonitor: NSObject {
         // Do UI updates on the main thread
         DispatchQueue.main.async {
             // For example "LTC\EUR: 44.56
-            let appDelegate = NSApplication.shared().delegate as! AppDelegate
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
             appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.realCurrency): \(exchangeRate)"
         }
     }

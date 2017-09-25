@@ -22,8 +22,8 @@ extension CryptoCurrencyViewController {
 
     // Storyboard instantiation
     static func instantiateController() -> CryptoCurrencyViewController {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: "CryptoCurrencyViewController") as? CryptoCurrencyViewController else {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "CryptoCurrencyViewController")) as? CryptoCurrencyViewController else {
             fatalError("Check Main.storyboard")
         }
         return viewcontroller

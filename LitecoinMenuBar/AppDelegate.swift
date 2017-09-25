@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var timer = Timer()
 
     override init() {
-        statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.title = "---/---: ----"
         statusItem.action = #selector(togglePopover)
 
@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.contentViewController = CryptoCurrencyViewController.instantiateController()
     }
 
-    func updateData() {
+    @objc func updateData() {
         cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
 
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 // Actions
 extension AppDelegate {
 
-    func togglePopover(_ sender: Any?) {
+    @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
             // Close popover
             popover.performClose(sender)
