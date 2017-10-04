@@ -9,11 +9,17 @@
 import Cocoa
 
 class CryptoCurrencyViewController: NSViewController {
-
+    
+    @IBOutlet weak var txtThreshold: NSTextField!
+    
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
 
     @IBAction func updateBtnPressed(_ sender: Any) {
         cryptoCurrencyMonitor.getCurrentExchangeRate()
+    }
+    
+    @IBAction func quitBtnPressed(_ sender: Any) {
+        NSApplication.shared.terminate(sender)
     }
 
 }
