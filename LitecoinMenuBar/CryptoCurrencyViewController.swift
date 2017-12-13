@@ -10,10 +10,13 @@ import Cocoa
 
 class CryptoCurrencyViewController: NSViewController {
     
-    @IBOutlet weak var txtThreshold: NSTextField!
-    @IBOutlet weak var chkExchangeRateWatcher: NSButton!
-    @IBOutlet weak var currencyPicker: NSPopUpButton!
+    @IBOutlet weak var fiatCurrencyPicker: NSPopUpButton!
+    @IBOutlet weak var cryptoCurrencyPicker: NSPopUpButton!
     
+    @IBOutlet weak var chkExchangeRateWatcher: NSButton!
+    @IBOutlet weak var txtThreshold: NSTextField!
+    @IBOutlet weak var lblActualCurrency: NSTextField!
+
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
     var defaults: UserDefaults = UserDefaults.standard
     
@@ -65,11 +68,9 @@ class CryptoCurrencyViewController: NSViewController {
         if sender.state == NSControl.StateValue.on {
             isExchangeRateWatcherOn = NSControl.StateValue.on
             txtThreshold.isEnabled = true
-            currencyPicker.isEnabled = true
         } else {
             isExchangeRateWatcherOn = NSControl.StateValue.off
             txtThreshold.isEnabled = false
-            currencyPicker.isEnabled = false
         }
     }
     
