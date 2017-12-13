@@ -8,10 +8,10 @@
 
 import Cocoa
 
-class CryptoCurrencyViewController: NSViewController {
+class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
     
-    @IBOutlet weak var fiatCurrencyPicker: NSPopUpButton!
-    @IBOutlet weak var cryptoCurrencyPicker: NSPopUpButton!
+    @IBOutlet weak var pckFiatCurrency: NSPopUpButton!
+    @IBOutlet weak var pckCryptoCurrency: NSPopUpButton!
     
     @IBOutlet weak var chkExchangeRateWatcher: NSButton!
     @IBOutlet weak var txtThreshold: NSTextField!
@@ -21,15 +21,39 @@ class CryptoCurrencyViewController: NSViewController {
     var defaults: UserDefaults = UserDefaults.standard
     
     var cryptoCurrency: String {
-        return defaults.string(forKey: UserDefaultsKeys.cryptoCurrency)!
+        get {
+            return defaults.string(forKey: UserDefaultsKeys.cryptoCurrency)!
+        }
+        set(newVal) {
+            if newVal != cryptoCurrency {
+                defaults.set(newVal, forKey: UserDefaultsKeys.cryptoCurrency)
+                defaults.synchronize()
+            }
+        }
     }
     
     var fiatCurrency: String {
-        return defaults.string(forKey: UserDefaultsKeys.fiatCurrency)!
+        get {
+            return defaults.string(forKey: UserDefaultsKeys.fiatCurrency)!
+        }
+        set(newVal) {
+            if newVal != fiatCurrency {
+                defaults.set(newVal, forKey: UserDefaultsKeys.fiatCurrency)
+                defaults.synchronize()
+            }
+        }
     }
     
-    var exchangeRateThreshold: Double {
-        return defaults.double(forKey: UserDefaultsKeys.exchangeRateThreshold)
+    var exchangeRateThreshold: String {
+        get {
+            return defaults.string(forKey: UserDefaultsKeys.exchangeRateThreshold)!
+        }
+        set(newVal) {
+            if newVal != exchangeRateThreshold {
+                defaults.set(newVal, forKey: UserDefaultsKeys.exchangeRateThreshold)
+                defaults.synchronize()
+            }
+        }
     }
     
     var isExchangeRateWatcherOn: NSControl.StateValue {
@@ -45,15 +69,28 @@ class CryptoCurrencyViewController: NSViewController {
             if newVal == NSControl.StateValue.on {
                 defaults.set(true, forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
             } else {
-                defaults.set(true, forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+                defaults.set(false, forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
             }
             defaults.synchronize()
         }
     }
     
     override func viewDidAppear() {
-        txtThreshold.doubleValue = exchangeRateThreshold
         chkExchangeRateWatcher.state = isExchangeRateWatcherOn
+        txtThreshold.isEnabled = defaults.bool(forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+        txtThreshold.stringValue = exchangeRateThreshold
+        pckFiatCurrency.selectItem(withTitle: fiatCurrency)
+        pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
+    }
+    
+    
+    @IBAction func fiatCurrencySelectionDidChange(_ sender: NSPopUpButton) {
+        fiatCurrency = sender.selectedItem!.title
+        lblActualCurrency.stringValue = sender.selectedItem!.title
+    }
+    
+    @IBAction func cryptoCurrencySelectionDidChange(_ sender: NSPopUpButton) {
+        cryptoCurrency = sender.selectedItem!.title
     }
     
     @IBAction func updateBtnPressed(_ sender: Any) {
@@ -72,6 +109,10 @@ class CryptoCurrencyViewController: NSViewController {
             isExchangeRateWatcherOn = NSControl.StateValue.off
             txtThreshold.isEnabled = false
         }
+    }
+    
+    override func controlTextDidChange(_ notification: Notification) {
+        exchangeRateThreshold = ((notification.object as? NSTextField)?.stringValue)!.filterNumbers(upto: 6, isDouble: true)
     }
     
 }

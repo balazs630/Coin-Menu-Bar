@@ -10,10 +10,10 @@ import Foundation
 
 class CryptoCurrencyAPI {
     
-    func fetchExchangeRate(from cryproCurrency: String, to realCurrency: String, success: @escaping (Double) -> Void) {
+    func fetchExchangeRate(from cryproCurrency: String, to fiatCurrency: String, success: @escaping (Double) -> Void) {
         let BASE_URL = "https://min-api.cryptocompare.com/data/"
         let session = URLSession.shared
-        let url = URL(string: "\(BASE_URL)pricemulti?fsyms=\(cryproCurrency)&tsyms=\(realCurrency)")
+        let url = URL(string: "\(BASE_URL)pricemulti?fsyms=\(cryproCurrency)&tsyms=\(fiatCurrency)")
         
         let task = session.dataTask(with: url!) { data, response, err in
             if let error = err {
@@ -24,7 +24,7 @@ class CryptoCurrencyAPI {
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case 200:
-                    if let exchangeRate = self.exchangeRateFromJSONData(data!, from: cryproCurrency, to: realCurrency) {
+                    if let exchangeRate = self.exchangeRateFromJSONData(data!, from: cryproCurrency, to: fiatCurrency) {
                         success(exchangeRate)
                     }
                 default:
@@ -35,7 +35,7 @@ class CryptoCurrencyAPI {
         task.resume()
     }
     
-    func exchangeRateFromJSONData(_ data: Data, from cryproCurrency: String, to realCurrency: String) -> Double? {
+    func exchangeRateFromJSONData(_ data: Data, from cryproCurrency: String, to fiatCurrency: String) -> Double? {
         typealias JSONDict = [String: Any]
         let json: JSONDict
         
@@ -50,7 +50,7 @@ class CryptoCurrencyAPI {
             return nil
         }
         
-        guard let exchangeRate = currency[realCurrency] as? Double else {
+        guard let exchangeRate = currency[fiatCurrency] as? Double else {
             return nil
         }
         

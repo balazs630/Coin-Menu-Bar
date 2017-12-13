@@ -701,6 +701,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="fiatCurrencySelectionDidChange:" target="XfG-lQ-9wD" id="FRj-hF-GKF"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-ae-Yht">
                                 <rect key="frame" x="24" y="90" width="58" height="17"/>
@@ -720,7 +723,7 @@
                                     <menu key="menu" id="KIb-g1-adF">
                                         <items>
                                             <menuItem title="BTC" id="Ji6-lO-BQz"/>
-                                            <menuItem title="ETH" state="on" id="aQd-zW-tuA"/>
+                                            <menuItem title="ETH" id="aQd-zW-tuA"/>
                                             <menuItem title="LTC" state="on" id="svq-w4-6Od"/>
                                             <menuItem title="DASH" id="Q4D-Oc-ICf"/>
                                             <menuItem title="XRP" id="U7V-HS-pH7"/>
@@ -728,13 +731,12 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="cryptoCurrencySelectionDidChange:" target="XfG-lQ-9wD" id="8JU-w4-awW"/>
+                                </connections>
                             </popUpButton>
-                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="2bS-RH-f3z">
-                                <rect key="frame" x="189" y="65" width="5" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JB-KF-Usx">
-                                <rect key="frame" x="218" y="156" width="96" height="17"/>
+                                <rect key="frame" x="218" y="156" width="102" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notifications" id="byQ-6g-hIY">
                                     <font key="font" metaFont="system" size="16"/>
@@ -766,11 +768,13 @@
                                 <rect key="frame" x="354" y="87" width="65" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="500" drawsBackground="YES" id="JxY-o5-L8Z">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="G5v-V3-FYn"/>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="AJo-nU-aTi"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xM6-jv-Vly">
                                 <rect key="frame" x="421" y="90" width="30" height="17"/>
@@ -803,13 +807,17 @@
                                     <action selector="quitBtnPressed:" target="XfG-lQ-9wD" id="rx6-3V-X6B"/>
                                 </connections>
                             </button>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="rtH-xS-QIl">
+                                <rect key="frame" x="190" y="61" width="5" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="chkExchangeRateWatcher" destination="F24-KI-0bN" id="ieI-jr-aih"/>
-                        <outlet property="cryptoCurrencyPicker" destination="ydp-a6-lxL" id="pS6-zr-RdP"/>
-                        <outlet property="fiatCurrencyPicker" destination="Y0H-xw-GfP" id="UcY-vq-r4x"/>
                         <outlet property="lblActualCurrency" destination="xM6-jv-Vly" id="zUz-ou-0ah"/>
+                        <outlet property="pckCryptoCurrency" destination="ydp-a6-lxL" id="QHQ-sO-Wne"/>
+                        <outlet property="pckFiatCurrency" destination="Y0H-xw-GfP" id="uQJ-4F-F3D"/>
                         <outlet property="txtThreshold" destination="ycR-dq-lSd" id="fX6-te-6Un"/>
                     </connections>
                 </viewController>

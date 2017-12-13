@@ -59,7 +59,7 @@ class CryptoCurrencyMonitor: NSObject {
     func sendThresholdExceededNotification() {
         let notification = NSUserNotification()
         notification.title = "Threshold exceeded"
-        notification.informativeText = "Exchange rate for /(cryptoCurrency) exceeded /(exchangeRateThreshold) /(fiatCurrency)."
+        notification.informativeText = "Exchange rate for \(cryptoCurrency) exceeded \(exchangeRateThreshold) \(fiatCurrency)."
         NSUserNotificationCenter.default.deliver(notification)
     }
     

@@ -12,6 +12,7 @@
 		AC59A1EF1F4E06DB00AF3B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */; };
 		AC59A1F21F4E06DB00AF3B86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1F01F4E06DB00AF3B86 /* Main.storyboard */; };
 		AC59A2001F4E099900AF3B86 /* CryptoCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1FF1F4E099900AF3B86 /* CryptoCurrencyViewController.swift */; };
+		AC9FBEC81FE1819900E1549D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FBEC71FE1819900E1549D /* Extensions.swift */; };
 		ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */; };
 		ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB732C81FDF0D3D00D47490 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		AC59A1F11F4E06DB00AF3B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC59A1F31F4E06DB00AF3B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC59A1FF1F4E099900AF3B86 /* CryptoCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyViewController.swift; sourceTree = "<group>"; };
+		AC9FBEC71FE1819900E1549D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyAPI.swift; sourceTree = "<group>"; };
 		ACB732C81FDF0D3D00D47490 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,10 +63,11 @@
 				AC59A1FF1F4E099900AF3B86 /* CryptoCurrencyViewController.swift */,
 				AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */,
 				ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */,
+				ACB732C81FDF0D3D00D47490 /* Constants.swift */,
+				AC9FBEC71FE1819900E1549D /* Extensions.swift */,
 				AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */,
 				AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */,
 				AC59A1F01F4E06DB00AF3B86 /* Main.storyboard */,
-				ACB732C81FDF0D3D00D47490 /* Constants.swift */,
 				AC59A1F31F4E06DB00AF3B86 /* Info.plist */,
 			);
 			path = LitecoinMenuBar;
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */,
+				AC9FBEC81FE1819900E1549D /* Extensions.swift in Sources */,
 				ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */,
 				AC59A2001F4E099900AF3B86 /* CryptoCurrencyViewController.swift in Sources */,
 				AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */,
