@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LitecoinMenuBar.xcodeproj">
+      location = "self:/Volumes/Data/Development/Litecoin-Menu-Bar/CoinMenuBar.xcodeproj">
    </FileRef>
 </Workspace>

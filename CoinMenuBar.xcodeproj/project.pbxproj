@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyMonitor.swift; sourceTree = "<group>"; };
-		AC59A1E71F4E06DB00AF3B86 /* Litecoin Menu Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Litecoin Menu Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Menu Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC59A1F11F4E06DB00AF3B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		AC59A1DE1F4E06DB00AF3B86 = {
 			isa = PBXGroup;
 			children = (
-				AC59A1E91F4E06DB00AF3B86 /* LitecoinMenuBar */,
+				AC59A1E91F4E06DB00AF3B86 /* CoinMenuBar */,
 				AC59A1E81F4E06DB00AF3B86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		AC59A1E81F4E06DB00AF3B86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC59A1E71F4E06DB00AF3B86 /* Litecoin Menu Bar.app */,
+				AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC59A1E91F4E06DB00AF3B86 /* LitecoinMenuBar */ = {
+		AC59A1E91F4E06DB00AF3B86 /* CoinMenuBar */ = {
 			isa = PBXGroup;
 			children = (
 				AC59A1FF1F4E099900AF3B86 /* CryptoCurrencyViewController.swift */,
@@ -70,15 +70,15 @@
 				AC59A1F01F4E06DB00AF3B86 /* Main.storyboard */,
 				AC59A1F31F4E06DB00AF3B86 /* Info.plist */,
 			);
-			path = LitecoinMenuBar;
+			path = CoinMenuBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC59A1E61F4E06DB00AF3B86 /* Litecoin Menu Bar */ = {
+		AC59A1E61F4E06DB00AF3B86 /* Coin Menu Bar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Litecoin Menu Bar" */;
+			buildConfigurationList = AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Coin Menu Bar" */;
 			buildPhases = (
 				AC59A1E31F4E06DB00AF3B86 /* Sources */,
 				AC59A1E41F4E06DB00AF3B86 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = "Litecoin Menu Bar";
+			name = "Coin Menu Bar";
 			productName = LitecoinMenuBar;
-			productReference = AC59A1E71F4E06DB00AF3B86 /* Litecoin Menu Bar.app */;
+			productReference = AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AC59A1E21F4E06DB00AF3B86 /* Build configuration list for PBXProject "LitecoinMenuBar" */;
+			buildConfigurationList = AC59A1E21F4E06DB00AF3B86 /* Build configuration list for PBXProject "CoinMenuBar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC59A1E61F4E06DB00AF3B86 /* Litecoin Menu Bar */,
+				AC59A1E61F4E06DB00AF3B86 /* Coin Menu Bar */,
 			);
 		};
 /* End PBXProject section */
@@ -278,12 +278,11 @@
 		AC59A1F71F4E06DB00AF3B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UW8QF9DSWQ;
-				INFOPLIST_FILE = LitecoinMenuBar/Info.plist;
+				INFOPLIST_FILE = CoinMenuBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = balazs630.LitecoinMenuBar;
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.CoinMenuBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -293,12 +292,11 @@
 		AC59A1F81F4E06DB00AF3B86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UW8QF9DSWQ;
-				INFOPLIST_FILE = LitecoinMenuBar/Info.plist;
+				INFOPLIST_FILE = CoinMenuBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = balazs630.LitecoinMenuBar;
+				PRODUCT_BUNDLE_IDENTIFIER = balazs630.CoinMenuBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -308,7 +306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC59A1E21F4E06DB00AF3B86 /* Build configuration list for PBXProject "LitecoinMenuBar" */ = {
+		AC59A1E21F4E06DB00AF3B86 /* Build configuration list for PBXProject "CoinMenuBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC59A1F41F4E06DB00AF3B86 /* Debug */,
@@ -317,7 +315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Litecoin Menu Bar" */ = {
+		AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Coin Menu Bar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC59A1F71F4E06DB00AF3B86 /* Debug */,
