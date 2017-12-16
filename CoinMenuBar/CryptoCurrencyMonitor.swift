@@ -26,7 +26,12 @@ class CryptoCurrencyMonitor: NSObject {
     }
     
     var isExchangeRateWatcherOn: Bool {
-        return defaults.bool(forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+        get {
+            return defaults.bool(forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+        }
+        set(newVal) {
+            defaults.set(newVal, forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+        }
     }
     
     func getCurrentExchangeRate() {
@@ -45,6 +50,7 @@ class CryptoCurrencyMonitor: NSObject {
         
         if isExchangeRateWatcherOn && isThresholdExceeded(basedOn: exchangeRate) == true {
             sendThresholdExceededNotification()
+            isExchangeRateWatcherOn = false
         }
     }
     

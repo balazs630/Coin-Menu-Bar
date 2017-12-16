@@ -756,7 +756,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-Hu-DKW">
-                                <rect key="frame" x="227" y="90" width="133" height="17"/>
+                                <rect key="frame" x="227" y="90" width="125" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="beyond a threshold:" id="VX0-dg-8RG">
                                     <font key="font" metaFont="system"/>
@@ -765,7 +765,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycR-dq-lSd">
-                                <rect key="frame" x="354" y="87" width="65" height="21"/>
+                                <rect key="frame" x="356" y="87" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="500" drawsBackground="YES" id="JxY-o5-L8Z">
                                     <font key="font" metaFont="system"/>
@@ -807,8 +807,8 @@
                                     <action selector="quitBtnPressed:" target="XfG-lQ-9wD" id="rx6-3V-X6B"/>
                                 </connections>
                             </button>
-                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-UB-SCt">
-                                <rect key="frame" x="190" y="61" width="5" height="96"/>
+                            <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-HC-yA5">
+                                <rect key="frame" x="165" y="64" width="52" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                         </subviews>
