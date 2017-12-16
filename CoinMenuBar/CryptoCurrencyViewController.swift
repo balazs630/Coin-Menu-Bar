@@ -25,10 +25,8 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
             return defaults.string(forKey: UserDefaultsKeys.cryptoCurrency)!
         }
         set(newVal) {
-            if newVal != cryptoCurrency {
-                defaults.set(newVal, forKey: UserDefaultsKeys.cryptoCurrency)
-                defaults.synchronize()
-            }
+            defaults.set(newVal, forKey: UserDefaultsKeys.cryptoCurrency)
+            defaults.synchronize()
         }
     }
     
@@ -37,10 +35,8 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
             return defaults.string(forKey: UserDefaultsKeys.fiatCurrency)!
         }
         set(newVal) {
-            if newVal != fiatCurrency {
-                defaults.set(newVal, forKey: UserDefaultsKeys.fiatCurrency)
-                defaults.synchronize()
-            }
+            defaults.set(newVal, forKey: UserDefaultsKeys.fiatCurrency)
+            defaults.synchronize()
         }
     }
     
@@ -49,10 +45,8 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
             return defaults.string(forKey: UserDefaultsKeys.exchangeRateThreshold)!
         }
         set(newVal) {
-            if newVal != exchangeRateThreshold {
-                defaults.set(newVal, forKey: UserDefaultsKeys.exchangeRateThreshold)
-                defaults.synchronize()
-            }
+            defaults.set(newVal, forKey: UserDefaultsKeys.exchangeRateThreshold)
+            defaults.synchronize()
         }
     }
     
@@ -83,22 +77,19 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
         pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
     }
     
-    
     @IBAction func fiatCurrencySelectionDidChange(_ sender: NSPopUpButton) {
-        fiatCurrency = sender.selectedItem!.title
-        lblActualCurrency.stringValue = sender.selectedItem!.title
+        if fiatCurrency != sender.selectedItem!.title {
+            fiatCurrency = sender.selectedItem!.title
+            cryptoCurrencyMonitor.getCurrentExchangeRate()
+            lblActualCurrency.stringValue = sender.selectedItem!.title
+        }
     }
     
     @IBAction func cryptoCurrencySelectionDidChange(_ sender: NSPopUpButton) {
-        cryptoCurrency = sender.selectedItem!.title
-    }
-    
-    @IBAction func updateBtnPressed(_ sender: Any) {
-        cryptoCurrencyMonitor.getCurrentExchangeRate()
-    }
-    
-    @IBAction func quitBtnPressed(_ sender: Any) {
-        NSApplication.shared.terminate(sender)
+        if cryptoCurrency != sender.selectedItem!.title {
+            cryptoCurrency = sender.selectedItem!.title
+            cryptoCurrencyMonitor.getCurrentExchangeRate()
+        }
     }
     
     @IBAction func exchangeRateWatcherCheckBoxClicked(_ sender: NSButton) {
@@ -111,8 +102,19 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
+    @IBAction func updateBtnPressed(_ sender: Any) {
+        cryptoCurrencyMonitor.getCurrentExchangeRate()
+    }
+    
+    @IBAction func quitBtnPressed(_ sender: Any) {
+        NSApplication.shared.terminate(sender)
+    }
+    
     override func controlTextDidChange(_ notification: Notification) {
-        exchangeRateThreshold = ((notification.object as? NSTextField)?.stringValue)!.filterNumbers(upto: 6, isDouble: true)
+        let actualInput = ((notification.object as? NSTextField)?.stringValue)!
+        if exchangeRateThreshold != actualInput {
+            exchangeRateThreshold = actualInput.filterNumbers(upto: 6, isDouble: true)
+        }
     }
     
 }

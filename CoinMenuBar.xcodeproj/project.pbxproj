@@ -278,6 +278,7 @@
 		AC59A1F71F4E06DB00AF3B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UW8QF9DSWQ;
 				INFOPLIST_FILE = CoinMenuBar/Info.plist;
@@ -292,6 +293,7 @@
 		AC59A1F81F4E06DB00AF3B86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UW8QF9DSWQ;
 				INFOPLIST_FILE = CoinMenuBar/Info.plist;
