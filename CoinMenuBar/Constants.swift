@@ -35,10 +35,13 @@ struct CryptoCurrency {
     }
 }
 
-struct UserDefaultsKeys {
-    static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
-    static let cryptoCurrency = "cryptoCurrency"
-    static let fiatCurrency = "fiatCurrency"
-    static let exchangeRateThreshold = "exchangeRateThreshold"
-    static let isExchangeRateWatcherOn = "isExchangeRateWatcherOn"
+extension UserDefaults {
+    struct Key {
+        static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
+        static let cryptoCurrency = "cryptoCurrency"
+        static let fiatCurrency = "fiatCurrency"
+        static let exchangeRateThreshold = "exchangeRateThreshold"
+        static let isExchangeRateWatcherOn = "isExchangeRateWatcherOn"
+    }
 }
+

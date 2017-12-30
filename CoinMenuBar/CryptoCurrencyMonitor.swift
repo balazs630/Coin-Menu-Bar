@@ -14,23 +14,23 @@ class CryptoCurrencyMonitor: NSObject {
     var defaults: UserDefaults = UserDefaults.standard
     
     var cryptoCurrency: String {
-        return defaults.string(forKey: UserDefaultsKeys.cryptoCurrency)!
+        return defaults.string(forKey: UserDefaults.Key.cryptoCurrency)!
     }
     
     var fiatCurrency: String {
-        return defaults.string(forKey: UserDefaultsKeys.fiatCurrency)!
+        return defaults.string(forKey: UserDefaults.Key.fiatCurrency)!
     }
     
     var exchangeRateThreshold: Double {
-        return defaults.double(forKey: UserDefaultsKeys.exchangeRateThreshold)
+        return defaults.double(forKey: UserDefaults.Key.exchangeRateThreshold)
     }
     
     var isExchangeRateWatcherOn: Bool {
         get {
-            return defaults.bool(forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+            return defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)
         }
         set(newVal) {
-            defaults.set(newVal, forKey: UserDefaultsKeys.isExchangeRateWatcherOn)
+            defaults.set(newVal, forKey: UserDefaults.Key.isExchangeRateWatcherOn)
             defaults.synchronize()
         }
     }

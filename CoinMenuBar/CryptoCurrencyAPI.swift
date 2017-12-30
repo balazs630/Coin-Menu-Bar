@@ -10,12 +10,13 @@ import Foundation
 
 class CryptoCurrencyAPI {
     
-    func fetchExchangeRate(from cryproCurrency: String, to fiatCurrency: String, success: @escaping (Double) -> Void) {
+    func fetchExchangeRate(from cryptoCurrency: String, to fiatCurrency: String, success: @escaping (Double) -> Void) {
         let BASE_URL = "https://min-api.cryptocompare.com/data/"
-        let session = URLSession.shared
-        let url = URL(string: "\(BASE_URL)pricemulti?fsyms=\(cryproCurrency)&tsyms=\(fiatCurrency)")
+        guard let url = URL(string: "\(BASE_URL)pricemulti?fsyms=\(cryptoCurrency)&tsyms=\(fiatCurrency)") else {
+            return
+        }
         
-        let task = session.dataTask(with: url!) { data, response, err in
+        let task = URLSession.shared.dataTask(with: url) { data, response, err in
             if let error = err {
                 NSLog("cryptocompare api error: \(error)")
             }
@@ -24,7 +25,8 @@ class CryptoCurrencyAPI {
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case 200:
-                    if let exchangeRate = self.exchangeRateFromJSONData(data!, from: cryproCurrency, to: fiatCurrency) {
+                    guard let data = data else { return }
+                    if let exchangeRate = self.exchangeRateFromJSONData(data, from: cryptoCurrency, to: fiatCurrency) {
                         success(exchangeRate)
                     }
                 default:
@@ -35,7 +37,7 @@ class CryptoCurrencyAPI {
         task.resume()
     }
     
-    func exchangeRateFromJSONData(_ data: Data, from cryproCurrency: String, to fiatCurrency: String) -> Double? {
+    func exchangeRateFromJSONData(_ data: Data, from cryptoCurrency: String, to fiatCurrency: String) -> Double? {
         typealias JSONDict = [String: Any]
         let json: JSONDict
         
@@ -46,7 +48,7 @@ class CryptoCurrencyAPI {
             return nil
         }
         
-        guard let currency = json[cryproCurrency] as? JSONDict else {
+        guard let currency = json[cryptoCurrency] as? JSONDict else {
             return nil
         }
         

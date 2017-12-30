@@ -30,15 +30,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         let defaults = UserDefaults.standard
         
-        if defaults.object(forKey: UserDefaultsKeys.isAppAlreadyLaunchedOnce) == nil {
+        if defaults.object(forKey: UserDefaults.Key.isAppAlreadyLaunchedOnce) == nil {
             // First launch
             
             let firstTimeLaunchDefaults: [String : Any] = [
-                UserDefaultsKeys.isAppAlreadyLaunchedOnce: true,
-                UserDefaultsKeys.cryptoCurrency: CryptoCurrency.Litecoin.code,
-                UserDefaultsKeys.fiatCurrency: FiatCurrency.Euro.code,
-                UserDefaultsKeys.exchangeRateThreshold: "500",
-                UserDefaultsKeys.isExchangeRateWatcherOn: false
+                UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
+                UserDefaults.Key.cryptoCurrency: CryptoCurrency.Litecoin.code,
+                UserDefaults.Key.fiatCurrency: FiatCurrency.Euro.code,
+                UserDefaults.Key.exchangeRateThreshold: "500",
+                UserDefaults.Key.isExchangeRateWatcherOn: false
             ]
             
             for item in firstTimeLaunchDefaults {
