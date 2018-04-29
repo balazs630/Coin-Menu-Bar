@@ -717,17 +717,22 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydp-a6-lxL">
                                 <rect key="frame" x="84" y="84" width="76" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="LTC" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="svq-w4-6Od" id="gld-fC-zhz">
+                                <popUpButtonCell key="cell" type="push" title="BTC" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ji6-lO-BQz" id="gld-fC-zhz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="KIb-g1-adF">
                                         <items>
                                             <menuItem title="BTC" id="Ji6-lO-BQz"/>
                                             <menuItem title="ETH" id="aQd-zW-tuA"/>
+                                            <menuItem title="BCH" id="U7V-HS-pH7"/>
+                                            <menuItem title="XRP" id="UeA-hQ-lQM"/>
+                                            <menuItem title="EOS" id="ikk-bU-ZI3"/>
+                                            <menuItem title="ADA" id="p7N-a0-Jdz"/>
                                             <menuItem title="LTC" state="on" id="svq-w4-6Od"/>
                                             <menuItem title="DASH" id="Q4D-Oc-ICf"/>
-                                            <menuItem title="XRP" id="U7V-HS-pH7"/>
                                             <menuItem title="IOTA" id="kmK-xj-eOQ"/>
+                                            <menuItem title="XLM" id="AhR-aP-gtt"/>
+                                            <menuItem title="XMR" id="IYS-rA-e35"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
@@ -808,8 +813,8 @@
                                 </connections>
                             </button>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-HC-yA5">
-                                <rect key="frame" x="165" y="64" width="5" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="190" y="65" width="5" height="96"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </box>
                         </subviews>
                     </view>
