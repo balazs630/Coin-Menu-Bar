@@ -14,13 +14,13 @@ struct FiatCurrency {
         static let sign = "Ft"
         static let code = "HUF"
     }
-    
+
     struct Euro {
         static let name = "euro"
         static let sign = "€"
         static let code = "EUR"
     }
-    
+
     struct Dollar {
         static let name = "dollar"
         static let sign = "$"
@@ -44,4 +44,3 @@ extension UserDefaults {
         static let isExchangeRateWatcherOn = "isExchangeRateWatcherOn"
     }
 }
-

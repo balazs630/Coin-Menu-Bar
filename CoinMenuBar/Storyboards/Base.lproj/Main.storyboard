@@ -669,7 +669,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KC5-EM-Prj">
-                                <rect key="frame" x="18" y="156" width="83" height="17"/>
+                                <rect key="frame" x="18" y="156" width="100" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Currencies" id="sQB-dE-tkS">
                                     <font key="font" metaFont="system" size="16"/>
@@ -678,7 +678,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4IH-Ge-TQi">
-                                <rect key="frame" x="24" y="123" width="39" height="17"/>
+                                <rect key="frame" x="24" y="122" width="40" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fiat:" id="TRn-bg-tsy">
                                     <font key="font" metaFont="system"/>
@@ -687,7 +687,7 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0H-xw-GfP">
-                                <rect key="frame" x="84" y="117" width="76" height="26"/>
+                                <rect key="frame" x="84" y="117" width="90" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="EUR" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4iX-Vf-Hnu" id="lbu-Tc-SlX">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -706,7 +706,7 @@
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kS0-ae-Yht">
-                                <rect key="frame" x="24" y="90" width="58" height="17"/>
+                                <rect key="frame" x="24" y="89" width="56" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Crypto:" id="En4-aH-66y">
                                     <font key="font" metaFont="system"/>
@@ -715,20 +715,20 @@
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydp-a6-lxL">
-                                <rect key="frame" x="84" y="84" width="76" height="26"/>
+                                <rect key="frame" x="84" y="84" width="90" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="BTC" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ji6-lO-BQz" id="gld-fC-zhz">
+                                <popUpButtonCell key="cell" type="push" title="BTC" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ji6-lO-BQz" id="gld-fC-zhz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="KIb-g1-adF">
                                         <items>
-                                            <menuItem title="BTC" id="Ji6-lO-BQz"/>
+                                            <menuItem title="BTC" state="on" id="Ji6-lO-BQz"/>
                                             <menuItem title="ETH" id="aQd-zW-tuA"/>
                                             <menuItem title="BCH" id="U7V-HS-pH7"/>
                                             <menuItem title="XRP" id="UeA-hQ-lQM"/>
                                             <menuItem title="EOS" id="ikk-bU-ZI3"/>
                                             <menuItem title="ADA" id="p7N-a0-Jdz"/>
-                                            <menuItem title="LTC" state="on" id="svq-w4-6Od"/>
+                                            <menuItem title="LTC" id="svq-w4-6Od"/>
                                             <menuItem title="DASH" id="Q4D-Oc-ICf"/>
                                             <menuItem title="IOTA" id="kmK-xj-eOQ"/>
                                             <menuItem title="XLM" id="AhR-aP-gtt"/>
@@ -741,7 +741,7 @@
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JB-KF-Usx">
-                                <rect key="frame" x="218" y="156" width="102" height="17"/>
+                                <rect key="frame" x="218" y="156" width="110" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Notifications" id="byQ-6g-hIY">
                                     <font key="font" metaFont="system" size="16"/>
@@ -750,7 +750,7 @@
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F24-KI-0bN">
-                                <rect key="frame" x="225" y="121" width="230" height="21"/>
+                                <rect key="frame" x="225" y="118" width="230" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Send notification if currency goes" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="WH7-F7-Mw0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -761,7 +761,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCB-Hu-DKW">
-                                <rect key="frame" x="227" y="90" width="125" height="17"/>
+                                <rect key="frame" x="225" y="85" width="125" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="beyond a threshold:" id="VX0-dg-8RG">
                                     <font key="font" metaFont="system"/>
@@ -770,7 +770,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycR-dq-lSd">
-                                <rect key="frame" x="356" y="87" width="63" height="21"/>
+                                <rect key="frame" x="356" y="90" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="500" drawsBackground="YES" id="JxY-o5-L8Z">
                                     <font key="font" metaFont="system"/>
@@ -780,15 +780,6 @@
                                 <connections>
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="AJo-nU-aTi"/>
                                 </connections>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xM6-jv-Vly">
-                                <rect key="frame" x="421" y="90" width="30" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="EUR" id="chV-cV-Ypj">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U15-1O-ve6">
                                 <rect key="frame" x="16" y="13" width="114" height="32"/>
@@ -812,8 +803,17 @@
                                     <action selector="quitBtnPressed:" target="XfG-lQ-9wD" id="rx6-3V-X6B"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xM6-jv-Vly">
+                                <rect key="frame" x="421" y="86" width="30" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="EUR" id="chV-cV-Ypj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-HC-yA5">
-                                <rect key="frame" x="190" y="65" width="5" height="96"/>
+                                <rect key="frame" x="197" y="64" width="5" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </box>
                         </subviews>

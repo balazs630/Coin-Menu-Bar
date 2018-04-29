@@ -10,55 +10,59 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     let statusItem: NSStatusItem
     let popover: NSPopover
-    
+
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
     var timer = Timer()
-    
+
     override init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.title = "---/---: ----"
         statusItem.action = #selector(togglePopover)
-        
+
         popover = NSPopover()
         popover.contentViewController = CryptoCurrencyViewController.instantiateController()
     }
-    
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         let defaults = UserDefaults.standard
-        
+
         if defaults.object(forKey: UserDefaults.Key.isAppAlreadyLaunchedOnce) == nil {
             // First launch
-            
-            let firstTimeLaunchDefaults: [String : Any] = [
+
+            let firstTimeLaunchDefaults: [String: Any] = [
                 UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
                 UserDefaults.Key.cryptoCurrency: CryptoCurrency.Litecoin.code,
                 UserDefaults.Key.fiatCurrency: FiatCurrency.Euro.code,
                 UserDefaults.Key.exchangeRateThreshold: "500",
                 UserDefaults.Key.isExchangeRateWatcherOn: false
             ]
-            
+
             for item in firstTimeLaunchDefaults {
                 defaults.set(item.value, forKey: item.key)
             }
-            
+
             defaults.synchronize()
         }
-        
+
         // Update data on first launch
         updateData()
-        
+
         // Set timer to fetch data every 30 seconds
-        timer = Timer.scheduledTimer(timeInterval: 30.0, target: self, selector: #selector(updateData), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 30.0,
+                                     target: self,
+                                     selector: #selector(updateData),
+                                     userInfo: nil,
+                                     repeats: true)
     }
-    
+
     @objc func updateData() {
         cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
-    
+
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
             // Close popover
@@ -70,6 +74,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
-}
 
+}
