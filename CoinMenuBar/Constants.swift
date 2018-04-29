@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  Litecoin Menu Bar
+//  CoinMenuBar
 //
 //  Created by Horváth Balázs on 2017. 12. 11..
 //  Copyright © 2017. Horváth Balázs. All rights reserved.

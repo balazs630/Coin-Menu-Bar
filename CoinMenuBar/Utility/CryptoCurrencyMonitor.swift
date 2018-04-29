@@ -1,6 +1,6 @@
 //
 //  CryptoCurrencyMonitor.swift
-//  LitecoinMenuBar
+//  CoinMenuBar
 //
 //  Created by Horváth Balázs on 2017. 08. 29..
 //  Copyright © 2017. Horváth Balázs. All rights reserved.

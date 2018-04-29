@@ -1,6 +1,6 @@
 //
-//  Extensions.swift
-//  Litecoin Menu Bar
+//  StringExtensions.swift
+//  CoinMenuBar
 //
 //  Created by Horváth Balázs on 2017. 12. 13..
 //  Copyright © 2017. Horváth Balázs. All rights reserved.
