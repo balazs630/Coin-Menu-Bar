@@ -70,7 +70,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             // Show popover
             if let button = statusItem.button {
-                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+                popover.show(relativeTo: button.bounds,
+                             of: button,
+                             preferredEdge: .minY)
             }
         }
     }

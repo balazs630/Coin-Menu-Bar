@@ -9,19 +9,19 @@
 import Foundation
 
 struct FiatCurrency {
-    struct Forint {
+    enum Forint {
         static let name = "forint"
         static let sign = "Ft"
         static let code = "HUF"
     }
 
-    struct Euro {
+    enum Euro {
         static let name = "euro"
         static let sign = "€"
         static let code = "EUR"
     }
 
-    struct Dollar {
+    enum Dollar {
         static let name = "dollar"
         static let sign = "$"
         static let code = "USD"
@@ -29,14 +29,14 @@ struct FiatCurrency {
 }
 
 struct CryptoCurrency {
-    struct Litecoin {
+    enum Litecoin {
         static let name = "litecoin"
         static let code = "LTC"
     }
 }
 
 extension UserDefaults {
-    struct Key {
+    enum Key {
         static let isAppAlreadyLaunchedOnce = "isAppAlreadyLaunchedOnce"
         static let cryptoCurrency = "cryptoCurrency"
         static let fiatCurrency = "fiatCurrency"

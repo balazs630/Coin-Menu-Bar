@@ -11,7 +11,7 @@ import Cocoa
 class CryptoCurrencyMonitor: NSObject {
 
     let cryptoCurrencyAPI = CryptoCurrencyAPI()
-    var defaults: UserDefaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
 
     var cryptoCurrency: String {
         return defaults.string(forKey: UserDefaults.Key.cryptoCurrency)!
@@ -56,11 +56,7 @@ class CryptoCurrencyMonitor: NSObject {
     }
 
     func isThresholdExceeded(basedOn exchangeRate: Double) -> Bool {
-        if exchangeRate >= exchangeRateThreshold {
-            return true
-        } else {
-            return false
-        }
+        return exchangeRate >= exchangeRateThreshold
     }
 
     func sendThresholdExceededNotification() {

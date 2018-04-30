@@ -38,7 +38,7 @@ class CryptoCurrencyAPI {
     }
 
     func exchangeRateFromJSONData(_ data: Data, from cryptoCurrency: String, to fiatCurrency: String) -> Double? {
-        var json: [String: Any] = [:]
+        var json = [String: Any]()
 
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])

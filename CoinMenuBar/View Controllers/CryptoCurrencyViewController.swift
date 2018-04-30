@@ -18,7 +18,7 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var lblActualCurrency: NSTextField!
 
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
-    var defaults: UserDefaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
 
     var cryptoCurrency: String {
         get {
