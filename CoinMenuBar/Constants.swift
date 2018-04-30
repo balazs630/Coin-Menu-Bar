@@ -6,7 +6,7 @@
 //  Copyright © 2017. Horváth Balázs. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 struct FiatCurrency {
     enum Forint {
@@ -43,4 +43,12 @@ extension UserDefaults {
         static let exchangeRateThreshold = "exchangeRateThreshold"
         static let isExchangeRateWatcherOn = "isExchangeRateWatcherOn"
     }
+}
+
+extension NSStoryboard.Name {
+    static let main = NSStoryboard.Name(rawValue: "Main")
+}
+
+extension NSStoryboard.SceneIdentifier {
+    static let cryptoCurrencyVC = NSStoryboard.SceneIdentifier(rawValue: "CryptoCurrencyViewController")
 }

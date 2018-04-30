@@ -11,12 +11,14 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    // MARK: Properties
     let statusItem: NSStatusItem
     let popover: NSPopover
 
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
     var timer = Timer()
 
+    // MARK: Initializers
     override init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.title = "---/---: ----"
@@ -58,7 +60,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                      userInfo: nil,
                                      repeats: true)
     }
+}
 
+// MARK: - Click actions
+extension AppDelegate {
     @objc func updateData() {
         cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
@@ -76,5 +81,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-
 }

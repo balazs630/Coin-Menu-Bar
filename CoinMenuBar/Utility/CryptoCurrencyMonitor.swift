@@ -10,6 +10,7 @@ import Cocoa
 
 class CryptoCurrencyMonitor: NSObject {
 
+    // MARK: Properties
     let cryptoCurrencyAPI = CryptoCurrencyAPI()
     let defaults = UserDefaults.standard
 
@@ -35,6 +36,7 @@ class CryptoCurrencyMonitor: NSObject {
         }
     }
 
+    // MARK: Utility methods
     func getCurrentExchangeRate() {
         cryptoCurrencyAPI.fetchExchangeRate(from: cryptoCurrency, to: fiatCurrency) { exchangeRate in
             self.updateUIElements(by: exchangeRate)

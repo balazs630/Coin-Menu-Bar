@@ -8,17 +8,11 @@
 
 import Cocoa
 
-class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
+class CryptoCurrencyViewController: NSViewController {
 
-    @IBOutlet weak var pckFiatCurrency: NSPopUpButton!
-    @IBOutlet weak var pckCryptoCurrency: NSPopUpButton!
-
-    @IBOutlet weak var chkExchangeRateWatcher: NSButton!
-    @IBOutlet weak var txtThreshold: NSTextField!
-    @IBOutlet weak var lblActualCurrency: NSTextField!
-
-    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
+    // MARK: Properties
     let defaults = UserDefaults.standard
+    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
 
     var cryptoCurrency: String {
         get {
@@ -69,6 +63,15 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 
+    // MARK: Outlets
+    @IBOutlet weak var pckFiatCurrency: NSPopUpButton!
+    @IBOutlet weak var pckCryptoCurrency: NSPopUpButton!
+
+    @IBOutlet weak var chkExchangeRateWatcher: NSButton!
+    @IBOutlet weak var txtThreshold: NSTextField!
+    @IBOutlet weak var lblActualCurrency: NSTextField!
+
+    // MARK: - View lifecycle
     override func viewDidAppear() {
         chkExchangeRateWatcher.state = isExchangeRateWatcherOn
         txtThreshold.isEnabled = defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)
@@ -77,6 +80,18 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
         pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
     }
 
+    static func instantiateController() -> CryptoCurrencyViewController {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name.main, bundle: nil)
+        let identifier = NSStoryboard.SceneIdentifier.cryptoCurrencyVC
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? CryptoCurrencyViewController else {
+            fatalError("Check Main.storyboard")
+        }
+        return viewcontroller
+    }
+}
+
+// MARK: - Actions
+extension CryptoCurrencyViewController {
     @IBAction func fiatCurrencySelectionDidChange(_ sender: NSPopUpButton) {
         if fiatCurrency != sender.selectedItem!.title {
             fiatCurrency = sender.selectedItem!.title
@@ -109,24 +124,14 @@ class CryptoCurrencyViewController: NSViewController, NSTextFieldDelegate {
     @IBAction func quitBtnPressed(_ sender: Any) {
         NSApplication.shared.terminate(sender)
     }
+}
 
+// MARK: - NSTextField events
+extension CryptoCurrencyViewController {
     override func controlTextDidChange(_ notification: Notification) {
         guard let actualInput = (notification.object as? NSTextField)?.stringValue else { return }
         if exchangeRateThreshold != actualInput {
             exchangeRateThreshold = actualInput.filterNumbers(upto: 6, isDouble: true)
         }
-    }
-
-}
-
-extension CryptoCurrencyViewController {
-    // Storyboard instantiation
-    static func instantiateController() -> CryptoCurrencyViewController {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier(rawValue: "CryptoCurrencyViewController")
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? CryptoCurrencyViewController else {
-            fatalError("Check Main.storyboard")
-        }
-        return viewcontroller
     }
 }
