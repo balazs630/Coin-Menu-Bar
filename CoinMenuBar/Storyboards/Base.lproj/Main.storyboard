@@ -660,10 +660,10 @@
             </objects>
             <point key="canvasLocation" x="155" y="-13"/>
         </scene>
-        <!--Crypto Currency View Controller-->
+        <!--Popover View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="CryptoCurrencyViewController" id="XfG-lQ-9wD" customClass="CryptoCurrencyViewController" customModule="Coin_Menu_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PopoverViewController" id="XfG-lQ-9wD" customClass="PopoverViewController" customModule="Coin_Menu_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="474" height="195"/>
                         <autoresizingMask key="autoresizingMask"/>

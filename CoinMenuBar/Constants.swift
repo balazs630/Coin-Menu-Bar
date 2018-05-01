@@ -50,5 +50,5 @@ extension NSStoryboard.Name {
 }
 
 extension NSStoryboard.SceneIdentifier {
-    static let cryptoCurrencyVC = NSStoryboard.SceneIdentifier(rawValue: "CryptoCurrencyViewController")
+    static let popoverVC = NSStoryboard.SceneIdentifier(rawValue: "PopoverViewController")
 }

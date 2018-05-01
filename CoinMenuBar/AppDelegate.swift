@@ -9,7 +9,7 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject {
 
     // MARK: Properties
     let defaults = UserDefaults.standard
@@ -25,9 +25,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.action = #selector(togglePopover)
 
         popover = NSPopover()
-        popover.contentViewController = CryptoCurrencyViewController.instantiateController()
+        popover.contentViewController = PopoverViewController.instantiateController()
     }
 
+}
+
+// MARK: - NSApplicationDelegate conformances
+extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         initUserDefaults()
     }

@@ -1,5 +1,5 @@
 //
-//  CryptoCurrencyViewController.swift
+//  PopoverViewController.swift
 //  CoinMenuBar
 //
 //  Created by Horváth Balázs on 2017. 08. 23..
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CryptoCurrencyViewController: NSViewController {
+class PopoverViewController: NSViewController {
 
     // MARK: Properties
     let defaults = UserDefaults.standard
@@ -87,18 +87,18 @@ class CryptoCurrencyViewController: NSViewController {
         pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
     }
 
-    static func instantiateController() -> CryptoCurrencyViewController {
+    static func instantiateController() -> PopoverViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name.main, bundle: nil)
-        let identifier = NSStoryboard.SceneIdentifier.cryptoCurrencyVC
-        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? CryptoCurrencyViewController else {
-            fatalError("Check Main.storyboard")
+        let popoverId = NSStoryboard.SceneIdentifier.popoverVC
+        guard let popover = storyboard.instantiateController(withIdentifier: popoverId) as? PopoverViewController else {
+            fatalError("Could not instantiate PopoverViewController with Storyboard ID: \(popoverId)")
         }
-        return viewcontroller
+        return popover
     }
 }
 
 // MARK: - Actions
-extension CryptoCurrencyViewController {
+extension PopoverViewController {
     @IBAction func fiatCurrencySelectionDidChange(_ sender: NSPopUpButton) {
         if fiatCurrency != sender.selectedItem!.title {
             fiatCurrency = sender.selectedItem!.title
@@ -134,7 +134,7 @@ extension CryptoCurrencyViewController {
 }
 
 // MARK: - NSTextField events
-extension CryptoCurrencyViewController {
+extension PopoverViewController {
     override func controlTextDidChange(_ notification: Notification) {
         guard let actualInput = (notification.object as? NSTextField)?.stringValue else { return }
         if exchangeRateThreshold != actualInput {
