@@ -72,6 +72,13 @@ class CryptoCurrencyViewController: NSViewController {
     @IBOutlet weak var lblActualCurrency: NSTextField!
 
     // MARK: - View lifecycle
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        cryptoCurrencyMonitor.getCurrentExchangeRate()
+        cryptoCurrencyMonitor.setRepeatingDataFetcher()
+    }
+
     override func viewDidAppear() {
         chkExchangeRateWatcher.state = isExchangeRateWatcherOn
         txtThreshold.isEnabled = defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)

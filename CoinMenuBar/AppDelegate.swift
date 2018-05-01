@@ -12,11 +12,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: Properties
+    let defaults = UserDefaults.standard
     let statusItem: NSStatusItem
     let popover: NSPopover
 
     let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
-    var timer = Timer()
 
     // MARK: Initializers
     override init() {
@@ -29,56 +29,43 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        let defaults = UserDefaults.standard
+        initUserDefaults()
+    }
 
+}
+
+// MARK: - UserDefaults setup
+extension AppDelegate {
+    private func initUserDefaults() {
         if defaults.object(forKey: UserDefaults.Key.isAppAlreadyLaunchedOnce) == nil {
-            // First launch
+            setFirstLaunchDefaultSettings()
+        }
+    }
 
-            let firstTimeLaunchDefaults: [String: Any] = [
-                UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
-                UserDefaults.Key.cryptoCurrency: CryptoCurrency.Litecoin.code,
-                UserDefaults.Key.fiatCurrency: FiatCurrency.Euro.code,
-                UserDefaults.Key.exchangeRateThreshold: "500",
-                UserDefaults.Key.isExchangeRateWatcherOn: false
-            ]
+    private func setFirstLaunchDefaultSettings() {
+        let firstTimeLaunchDefaults: [String: Any] = [
+            UserDefaults.Key.isAppAlreadyLaunchedOnce: true,
+            UserDefaults.Key.cryptoCurrency: CryptoCurrency.Litecoin.code,
+            UserDefaults.Key.fiatCurrency: FiatCurrency.Euro.code,
+            UserDefaults.Key.exchangeRateThreshold: "500",
+            UserDefaults.Key.isExchangeRateWatcherOn: false
+        ]
 
-            for item in firstTimeLaunchDefaults {
-                defaults.set(item.value, forKey: item.key)
-            }
-
-            defaults.synchronize()
+        for item in firstTimeLaunchDefaults {
+            defaults.set(item.value, forKey: item.key)
         }
 
-        // Update data on first launch
-        updateData()
-
-        // Set timer to fetch data every 30 seconds
-        timer = Timer.scheduledTimer(timeInterval: 30.0,
-                                     target: self,
-                                     selector: #selector(updateData),
-                                     userInfo: nil,
-                                     repeats: true)
+        defaults.synchronize()
     }
 }
 
 // MARK: - Click actions
 extension AppDelegate {
-    @objc func updateData() {
-        cryptoCurrencyMonitor.getCurrentExchangeRate()
-    }
-
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
-            // Close popover
             popover.performClose(sender)
         } else {
-            // Show popover
-            if let button = statusItem.button {
-                popover.show(relativeTo: button.bounds,
-                             of: button,
-                             preferredEdge: .minY)
-            }
+            popover.performOpen(statusItem: statusItem)
         }
     }
 }

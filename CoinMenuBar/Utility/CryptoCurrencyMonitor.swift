@@ -11,8 +11,9 @@ import Cocoa
 class CryptoCurrencyMonitor: NSObject {
 
     // MARK: Properties
-    let cryptoCurrencyAPI = CryptoCurrencyAPI()
+    var timer = Timer()
     let defaults = UserDefaults.standard
+    let cryptoCurrencyAPI = CryptoCurrencyAPI()
 
     var cryptoCurrency: String {
         return defaults.string(forKey: UserDefaults.Key.cryptoCurrency)!
@@ -37,13 +38,21 @@ class CryptoCurrencyMonitor: NSObject {
     }
 
     // MARK: Utility methods
-    func getCurrentExchangeRate() {
+    func setRepeatingDataFetcher() {
+        timer = Timer.scheduledTimer(timeInterval: 30.0,
+                                     target: self,
+                                     selector: #selector(getCurrentExchangeRate),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+
+    @objc func getCurrentExchangeRate() {
         cryptoCurrencyAPI.fetchExchangeRate(from: cryptoCurrency, to: fiatCurrency) { exchangeRate in
             self.updateUIElements(by: exchangeRate)
         }
     }
 
-    func updateUIElements(by exchangeRate: Double) {
+    private func updateUIElements(by exchangeRate: Double) {
         // Do UI updates on the main thread
         DispatchQueue.main.async {
             // For example "LTC\EUR: 44.56

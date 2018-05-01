@@ -15,6 +15,7 @@
 		AC9FBEC81FE1819900E1549D /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FBEC71FE1819900E1549D /* StringExtensions.swift */; };
 		ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */; };
 		ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB732C81FDF0D3D00D47490 /* Constants.swift */; };
+		ACC2941820990914002DCC32 /* NSPopoverExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AC9FBEC71FE1819900E1549D /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyAPI.swift; sourceTree = "<group>"; };
 		ACB732C81FDF0D3D00D47490 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPopoverExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AC9FBEC71FE1819900E1549D /* StringExtensions.swift */,
+				ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */,
 				AC9FBEC81FE1819900E1549D /* StringExtensions.swift in Sources */,
+				ACC2941820990914002DCC32 /* NSPopoverExtensions.swift in Sources */,
 				ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */,
 				AC59A2001F4E099900AF3B86 /* CryptoCurrencyViewController.swift in Sources */,
 				AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */,
