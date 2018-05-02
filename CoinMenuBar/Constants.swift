@@ -8,6 +8,10 @@
 
 import Cocoa
 
+struct Constant {
+    static let dataFetcherTimerInterval = 30.0
+}
+
 struct FiatCurrency {
     enum Forint {
         static let name = "forint"

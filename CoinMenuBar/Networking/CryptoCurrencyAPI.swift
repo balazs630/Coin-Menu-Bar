@@ -10,8 +10,9 @@ import Foundation
 
 class CryptoCurrencyAPI {
 
+    let baseUrl = "https://min-api.cryptocompare.com/data/"
+
     func fetchExchangeRate(from cryptoCurrency: String, to fiatCurrency: String, success: @escaping (Double) -> Void) {
-        let baseUrl = "https://min-api.cryptocompare.com/data/"
         guard let url = URL(string: "\(baseUrl)pricemulti?fsyms=\(cryptoCurrency)&tsyms=\(fiatCurrency)") else {
             return
         }

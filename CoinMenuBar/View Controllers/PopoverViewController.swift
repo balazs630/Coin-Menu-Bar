@@ -124,11 +124,11 @@ extension PopoverViewController {
         }
     }
 
-    @IBAction func updateBtnPressed(_ sender: Any) {
+    @IBAction func updateButtonPressed(_ sender: Any) {
         cryptoCurrencyMonitor.getCurrentExchangeRate()
     }
 
-    @IBAction func quitBtnPressed(_ sender: Any) {
+    @IBAction func quitButtonPressed(_ sender: Any) {
         NSApplication.shared.terminate(sender)
     }
 }

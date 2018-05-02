@@ -39,7 +39,7 @@ class CryptoCurrencyMonitor: NSObject {
 
     // MARK: Utility methods
     func setRepeatingDataFetcher() {
-        timer = Timer.scheduledTimer(timeInterval: 30.0,
+        timer = Timer.scheduledTimer(timeInterval: Constant.dataFetcherTimerInterval,
                                      target: self,
                                      selector: #selector(getCurrentExchangeRate),
                                      userInfo: nil,
@@ -48,29 +48,31 @@ class CryptoCurrencyMonitor: NSObject {
 
     @objc func getCurrentExchangeRate() {
         cryptoCurrencyAPI.fetchExchangeRate(from: cryptoCurrency, to: fiatCurrency) { exchangeRate in
-            self.updateUIElements(by: exchangeRate)
+            self.updateMenuBarStatusElement(by: exchangeRate)
+            self.compareThreshold(with: exchangeRate)
         }
     }
 
-    private func updateUIElements(by exchangeRate: Double) {
-        // Do UI updates on the main thread
+    private func updateMenuBarStatusElement(by exchangeRate: Double) {
+        guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else { return }
         DispatchQueue.main.async {
             // For example "LTC\EUR: 44.56
-            guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else { return }
             appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.fiatCurrency): \(exchangeRate)"
         }
+    }
 
+    private func compareThreshold(with exchangeRate: Double) {
         if isExchangeRateWatcherOn && isThresholdExceeded(basedOn: exchangeRate) == true {
             sendThresholdExceededNotification()
             isExchangeRateWatcherOn = false
         }
     }
 
-    func isThresholdExceeded(basedOn exchangeRate: Double) -> Bool {
+    private func isThresholdExceeded(basedOn exchangeRate: Double) -> Bool {
         return exchangeRate >= exchangeRateThreshold
     }
 
-    func sendThresholdExceededNotification() {
+    private func sendThresholdExceededNotification() {
         let notification = NSUserNotification()
         notification.title = "Threshold exceeded"
         notification.informativeText = "Exchange rate for \(cryptoCurrency)"

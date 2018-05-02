@@ -789,7 +789,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="updateBtnPressed:" target="XfG-lQ-9wD" id="zvN-0b-JTe"/>
+                                    <action selector="updateButtonPressed:" target="XfG-lQ-9wD" id="F8B-30-uZ2"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DV5-kF-NCX">
@@ -800,7 +800,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="quitBtnPressed:" target="XfG-lQ-9wD" id="rx6-3V-X6B"/>
+                                    <action selector="quitButtonPressed:" target="XfG-lQ-9wD" id="mxD-2K-ZjN"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xM6-jv-Vly">

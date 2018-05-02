@@ -16,8 +16,6 @@ class AppDelegate: NSObject {
     let statusItem: NSStatusItem
     let popover: NSPopover
 
-    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
-
     // MARK: Initializers
     override init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -27,7 +25,6 @@ class AppDelegate: NSObject {
         popover = NSPopover()
         popover.contentViewController = PopoverViewController.instantiateController()
     }
-
 }
 
 // MARK: - NSApplicationDelegate conformances
