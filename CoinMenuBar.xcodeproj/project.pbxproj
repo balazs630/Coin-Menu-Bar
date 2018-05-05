@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191849AFF1E8B446DAE08DF9 /* Pods_Coin_Menu_Bar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */; };
 		AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */; };
 		AC59A1EB1F4E06DB00AF3B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */; };
 		AC59A1EF1F4E06DB00AF3B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coin_Menu_Bar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coin Menu Bar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar.debug.xcconfig"; sourceTree = "<group>"; };
 		AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyMonitor.swift; sourceTree = "<group>"; };
 		AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Menu Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyAPI.swift; sourceTree = "<group>"; };
 		ACB732C81FDF0D3D00D47490 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPopoverExtensions.swift; sourceTree = "<group>"; };
+		C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coin Menu Bar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191849AFF1E8B446DAE08DF9 /* Pods_Coin_Menu_Bar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0042C1B98BF0AA507B59D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */,
+				C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E63E282D490B1223FCE1552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC59A1DE1F4E06DB00AF3B86 = {
 			isa = PBXGroup;
 			children = (
 				AC59A1E91F4E06DB00AF3B86 /* CoinMenuBar */,
 				AC59A1E81F4E06DB00AF3B86 /* Products */,
+				0C0042C1B98BF0AA507B59D2 /* Pods */,
+				9E63E282D490B1223FCE1552 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,10 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Coin Menu Bar" */;
 			buildPhases = (
+				A55038F46E989A99469BF177 /* [CP] Check Pods Manifest.lock */,
 				AC59A1E31F4E06DB00AF3B86 /* Sources */,
 				AC59A1E41F4E06DB00AF3B86 /* Frameworks */,
 				AC59A1E51F4E06DB00AF3B86 /* Resources */,
 				ACDBD33020968B1300EFD756 /* SwiftLint */,
+				99E762BE9C96D606F2A6C9EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +228,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		99E762BE9C96D606F2A6C9EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55038F46E989A99469BF177 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coin Menu Bar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ACDBD33020968B1300EFD756 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +421,7 @@
 		};
 		AC59A1F71F4E06DB00AF3B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -374,6 +437,7 @@
 		};
 		AC59A1F81F4E06DB00AF3B86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

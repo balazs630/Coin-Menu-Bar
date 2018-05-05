@@ -1,0 +1,6 @@
+framework module Pods_Coin_Menu_Bar {
+  umbrella header "Pods-Coin Menu Bar-umbrella.h"
+
+  export *
+  module * { export * }
+}
