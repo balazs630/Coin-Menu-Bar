@@ -13,8 +13,9 @@
 		AC59A1EF1F4E06DB00AF3B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */; };
 		AC59A1F21F4E06DB00AF3B86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1F01F4E06DB00AF3B86 /* Main.storyboard */; };
 		AC59A2001F4E099900AF3B86 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1FF1F4E099900AF3B86 /* PopoverViewController.swift */; };
+		AC6520D5209E40AA002CDED2 /* AlamofireExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6520D4209E40AA002CDED2 /* AlamofireExtensions.swift */; };
 		AC9FBEC81FE1819900E1549D /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FBEC71FE1819900E1549D /* StringExtensions.swift */; };
-		ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */; };
+		ACACF6E51F4E135300F501B1 /* CryptoCurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACACF6E41F4E135300F501B1 /* CryptoCurrencyService.swift */; };
 		ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB732C81FDF0D3D00D47490 /* Constants.swift */; };
 		ACC2941820990914002DCC32 /* NSPopoverExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -29,8 +30,9 @@
 		AC59A1F11F4E06DB00AF3B86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC59A1F31F4E06DB00AF3B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC59A1FF1F4E099900AF3B86 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		AC6520D4209E40AA002CDED2 /* AlamofireExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireExtensions.swift; sourceTree = "<group>"; };
 		AC9FBEC71FE1819900E1549D /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyAPI.swift; sourceTree = "<group>"; };
+		ACACF6E41F4E135300F501B1 /* CryptoCurrencyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyService.swift; sourceTree = "<group>"; };
 		ACB732C81FDF0D3D00D47490 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPopoverExtensions.swift; sourceTree = "<group>"; };
 		C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coin Menu Bar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 		ACDBD32A2096881C00EFD756 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				ACACF6E41F4E135300F501B1 /* CryptoCurrencyAPI.swift */,
+				ACACF6E41F4E135300F501B1 /* CryptoCurrencyService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 			children = (
 				AC9FBEC71FE1819900E1549D /* StringExtensions.swift */,
 				ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */,
+				AC6520D4209E40AA002CDED2 /* AlamofireExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,7 +291,8 @@
 				ACB732C91FDF0D3D00D47490 /* Constants.swift in Sources */,
 				AC9FBEC81FE1819900E1549D /* StringExtensions.swift in Sources */,
 				ACC2941820990914002DCC32 /* NSPopoverExtensions.swift in Sources */,
-				ACACF6E51F4E135300F501B1 /* CryptoCurrencyAPI.swift in Sources */,
+				ACACF6E51F4E135300F501B1 /* CryptoCurrencyService.swift in Sources */,
+				AC6520D5209E40AA002CDED2 /* AlamofireExtensions.swift in Sources */,
 				AC59A2001F4E099900AF3B86 /* PopoverViewController.swift in Sources */,
 				AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */,
 				AC59A1EB1F4E06DB00AF3B86 /* AppDelegate.swift in Sources */,

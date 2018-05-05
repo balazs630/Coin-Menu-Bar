@@ -8,12 +8,12 @@
 
 import Cocoa
 
-class CryptoCurrencyMonitor: NSObject {
+class CryptoCurrencyMonitor {
 
     // MARK: Properties
     var timer = Timer()
     let defaults = UserDefaults.standard
-    let cryptoCurrencyAPI = CryptoCurrencyAPI()
+    let cryptoCurrencyService: CryptoCurrencyService
 
     var cryptoCurrency: String {
         return defaults.string(forKey: UserDefaults.Key.cryptoCurrency)!
@@ -37,6 +37,11 @@ class CryptoCurrencyMonitor: NSObject {
         }
     }
 
+    // MARK: Initializers
+    init() {
+        self.cryptoCurrencyService = CryptoCurrencyService()
+    }
+
     // MARK: Utility methods
     func setRepeatingDataFetcher() {
         timer = Timer.scheduledTimer(timeInterval: Constant.dataFetcherTimerInterval,
@@ -47,7 +52,7 @@ class CryptoCurrencyMonitor: NSObject {
     }
 
     @objc func getCurrentExchangeRate() {
-        cryptoCurrencyAPI.fetchExchangeRate(from: cryptoCurrency, to: fiatCurrency) { exchangeRate in
+        cryptoCurrencyService.fetchExchangeRate(from: cryptoCurrency, to: fiatCurrency) { exchangeRate in
             self.updateMenuBarStatusElement(by: exchangeRate)
             self.compareThreshold(with: exchangeRate)
         }

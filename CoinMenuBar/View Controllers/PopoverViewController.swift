@@ -12,7 +12,7 @@ class PopoverViewController: NSViewController {
 
     // MARK: Properties
     let defaults = UserDefaults.standard
-    let cryptoCurrencyMonitor = CryptoCurrencyMonitor()
+    let cryptoCurrencyMonitor: CryptoCurrencyMonitor
 
     var cryptoCurrency: String {
         get {
@@ -71,14 +71,16 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var txtThreshold: NSTextField!
     @IBOutlet weak var lblActualCurrency: NSTextField!
 
-    // MARK: - View lifecycle
+    // MARK: Initializers
     required init?(coder: NSCoder) {
+        cryptoCurrencyMonitor = CryptoCurrencyMonitor()
         super.init(coder: coder)
 
         cryptoCurrencyMonitor.getCurrentExchangeRate()
         cryptoCurrencyMonitor.setRepeatingDataFetcher()
     }
 
+    // MARK: - View lifecycle
     override func viewDidAppear() {
         chkExchangeRateWatcher.state = isExchangeRateWatcherOn
         txtThreshold.isEnabled = defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)
