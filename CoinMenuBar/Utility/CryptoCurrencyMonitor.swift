@@ -62,7 +62,8 @@ class CryptoCurrencyMonitor {
         guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else { return }
         DispatchQueue.main.async {
             // For example "LTC\EUR: 44.56
-            appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.fiatCurrency): \(exchangeRate)"
+            let formattedRate = String(format: "%.4f", exchangeRate)
+            appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.fiatCurrency): \(formattedRate)"
         }
     }
 
