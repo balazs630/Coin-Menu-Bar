@@ -68,7 +68,7 @@ class CryptoCurrencyMonitor {
     }
 
     private func compareThreshold(with exchangeRate: Double) {
-        if isExchangeRateWatcherOn && isThresholdExceeded(basedOn: exchangeRate) == true {
+        if isExchangeRateWatcherOn && isThresholdExceeded(basedOn: exchangeRate) {
             sendThresholdExceededNotification()
             isExchangeRateWatcherOn = false
         }

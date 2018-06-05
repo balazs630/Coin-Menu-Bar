@@ -12,7 +12,7 @@ public extension String {
     func filterNumbers(upto maxlength: Int, isDouble: Bool = false) -> String {
         // Clear invalid input, e.x. letters
 
-        let numberSet = (isDouble == true) ? ".0123456789" : "0123456789"
+        let numberSet = isDouble ? ".0123456789" : "0123456789"
         let filtered = String(self.filter { numberSet.contains($0) })
 
         // Doesn't allow numbers greater than maxlength digits
