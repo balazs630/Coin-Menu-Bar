@@ -13,5 +13,5 @@ workspace 'CoinMenuBar.xcworkspace'
 
 ## Inject pods
 target 'Coin Menu Bar' do
-  pod 'Alamofire', '~> 4.7'
+  pod 'Alamofire', '~> 4.7.3'
 end

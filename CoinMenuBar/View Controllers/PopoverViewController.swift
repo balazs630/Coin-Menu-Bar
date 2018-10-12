@@ -82,11 +82,7 @@ class PopoverViewController: NSViewController {
 
     // MARK: - View lifecycle
     override func viewDidAppear() {
-        chkExchangeRateWatcher.state = isExchangeRateWatcherOn
-        txtThreshold.isEnabled = defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)
-        txtThreshold.stringValue = exchangeRateThreshold
-        pckFiatCurrency.selectItem(withTitle: fiatCurrency)
-        pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
+        setupView()
     }
 
     static func instantiateController() -> PopoverViewController {
@@ -96,6 +92,18 @@ class PopoverViewController: NSViewController {
             fatalError("Could not instantiate PopoverViewController with Storyboard ID: \(popoverId)")
         }
         return popover
+    }
+}
+
+// MARK: Screen setup
+extension PopoverViewController {
+    private func setupView() {
+        chkExchangeRateWatcher.state = isExchangeRateWatcherOn
+        txtThreshold.isEnabled = defaults.bool(forKey: UserDefaults.Key.isExchangeRateWatcherOn)
+        txtThreshold.stringValue = exchangeRateThreshold
+        lblActualCurrency.stringValue = fiatCurrency
+        pckFiatCurrency.selectItem(withTitle: fiatCurrency)
+        pckCryptoCurrency.selectItem(withTitle: cryptoCurrency)
     }
 }
 
@@ -135,9 +143,9 @@ extension PopoverViewController {
     }
 }
 
-// MARK: - NSTextField events
-extension PopoverViewController {
-    override func controlTextDidChange(_ notification: Notification) {
+// MARK: - NSControlTextEditingDelegate methods
+extension PopoverViewController: NSTextFieldDelegate {
+     func controlTextDidChange(_ notification: Notification) {
         guard let actualInput = (notification.object as? NSTextField)?.stringValue else { return }
         if exchangeRateThreshold != actualInput {
             exchangeRateThreshold = actualInput.filterNumbers(upto: 6, isDouble: true)

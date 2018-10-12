@@ -50,9 +50,10 @@ extension UserDefaults {
 }
 
 extension NSStoryboard.Name {
-    static let main = NSStoryboard.Name(rawValue: "Main")
+    static let main = NSStoryboard.Name("Main")
+
 }
 
 extension NSStoryboard.SceneIdentifier {
-    static let popoverVC = NSStoryboard.SceneIdentifier(rawValue: "PopoverViewController")
+    static let popoverVC = NSStoryboard.SceneIdentifier("PopoverViewController")
 }

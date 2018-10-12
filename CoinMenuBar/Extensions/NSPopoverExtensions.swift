@@ -12,8 +12,8 @@ public extension NSPopover {
     func performOpen (statusItem: NSStatusItem) {
         if let button = statusItem.button {
             self.show(relativeTo: button.bounds,
-                         of: button,
-                         preferredEdge: .minY)
+                      of: button,
+                      preferredEdge: .minY)
         }
     }
 

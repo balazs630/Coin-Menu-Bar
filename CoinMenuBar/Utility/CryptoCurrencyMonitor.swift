@@ -39,7 +39,7 @@ class CryptoCurrencyMonitor {
 
     // MARK: Initializers
     init() {
-        self.cryptoCurrencyService = CryptoCurrencyService()
+        cryptoCurrencyService = CryptoCurrencyService()
     }
 
     // MARK: Utility methods
@@ -62,7 +62,7 @@ class CryptoCurrencyMonitor {
         guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else { return }
         DispatchQueue.main.async {
             // For example "LTC\EUR: 44.56
-            let formattedRate = String(format: "%.4f", exchangeRate)
+            let formattedRate = String(format: "%.2f", exchangeRate)
             appDelegate.statusItem.title = "\(self.cryptoCurrency)\\\(self.fiatCurrency): \(formattedRate)"
         }
     }

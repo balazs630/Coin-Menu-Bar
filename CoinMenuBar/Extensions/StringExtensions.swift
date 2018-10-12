@@ -13,7 +13,7 @@ public extension String {
         // Clear invalid input, e.x. letters
 
         let numberSet = isDouble ? ".0123456789" : "0123456789"
-        let filtered = String(self.filter { numberSet.contains($0) })
+        let filtered = self.filter { numberSet.contains($0) }
 
         // Doesn't allow numbers greater than maxlength digits
         if filtered.count > maxlength {
