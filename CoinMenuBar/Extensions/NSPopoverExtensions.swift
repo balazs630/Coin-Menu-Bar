@@ -16,5 +16,4 @@ public extension NSPopover {
                       preferredEdge: .minY)
         }
     }
-
 }

@@ -9,7 +9,6 @@
 import Alamofire
 
 class CryptoCurrencyService {
-
     let baseUrl = "https://min-api.cryptocompare.com/data/"
 
     func fetchExchangeRate(from cryptoCurrency: String, to fiatCurrency: String, success: @escaping (Double) -> Void) {

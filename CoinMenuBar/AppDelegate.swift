@@ -10,7 +10,6 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject {
-
     // MARK: Properties
     let defaults = UserDefaults.standard
     let statusItem: NSStatusItem
@@ -32,7 +31,6 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         initUserDefaults()
     }
-
 }
 
 // MARK: - UserDefaults setup
@@ -52,8 +50,8 @@ extension AppDelegate {
             UserDefaults.Key.isExchangeRateWatcherOn: false
         ]
 
-        for item in firstTimeLaunchDefaults {
-            defaults.set(item.value, forKey: item.key)
+        firstTimeLaunchDefaults.forEach {
+            defaults.set($0.value, forKey: $0.key)
         }
 
         defaults.synchronize()

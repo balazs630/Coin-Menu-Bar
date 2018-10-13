@@ -9,7 +9,6 @@
 import Cocoa
 
 class CryptoCurrencyMonitor {
-
     // MARK: Properties
     var timer = Timer()
     let defaults = UserDefaults.standard
@@ -85,5 +84,4 @@ class CryptoCurrencyMonitor {
                                         + "exceeded \(exchangeRateThreshold) \(fiatCurrency)."
         NSUserNotificationCenter.default.deliver(notification)
     }
-
 }

@@ -9,7 +9,6 @@
 import Cocoa
 
 class PopoverViewController: NSViewController {
-
     // MARK: Properties
     let defaults = UserDefaults.standard
     let cryptoCurrencyMonitor: CryptoCurrencyMonitor
@@ -143,12 +142,12 @@ extension PopoverViewController {
     }
 }
 
-// MARK: - NSControlTextEditingDelegate methods
+// MARK: - NSTextFieldDelegate methods
 extension PopoverViewController: NSTextFieldDelegate {
      func controlTextDidChange(_ notification: Notification) {
         guard let actualInput = (notification.object as? NSTextField)?.stringValue else { return }
         if exchangeRateThreshold != actualInput {
-            exchangeRateThreshold = actualInput.filterNumbers(upto: 6, isDouble: true)
+            exchangeRateThreshold = actualInput.filterNumbers()
         }
     }
 }

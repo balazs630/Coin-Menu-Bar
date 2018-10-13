@@ -16,5 +16,4 @@ public extension DataResponse {
 
         return responseJson
     }
-
 }
