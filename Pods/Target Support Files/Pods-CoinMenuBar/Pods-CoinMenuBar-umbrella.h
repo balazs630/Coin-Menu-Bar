@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Coin_Menu_BarVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Coin_Menu_BarVersionString[];
+FOUNDATION_EXPORT double Pods_CoinMenuBarVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CoinMenuBarVersionString[];
 

@@ -12,6 +12,6 @@ inhibit_all_warnings!
 workspace 'CoinMenuBar.xcworkspace'
 
 ## Inject pods
-target 'Coin Menu Bar' do
+target 'CoinMenuBar' do
   pod 'Alamofire', '~> 4.7.3'
 end

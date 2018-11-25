@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		191849AFF1E8B446DAE08DF9 /* Pods_Coin_Menu_Bar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */; };
+		9265D449BD5E9DE3298068B9 /* Pods_CoinMenuBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F2D155780066A4FAEC66F2 /* Pods_CoinMenuBar.framework */; };
 		AC100EB01F560EAA0069C0DE /* CryptoCurrencyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */; };
 		AC59A1EB1F4E06DB00AF3B86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */; };
 		AC59A1EF1F4E06DB00AF3B86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC59A1EE1F4E06DB00AF3B86 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coin_Menu_Bar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coin Menu Bar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar.debug.xcconfig"; sourceTree = "<group>"; };
+		22F2D155780066A4FAEC66F2 /* Pods_CoinMenuBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinMenuBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC100EAF1F560EAA0069C0DE /* CryptoCurrencyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyMonitor.swift; sourceTree = "<group>"; };
 		AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coin Menu Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC59A1EA1F4E06DB00AF3B86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +35,8 @@
 		ACACF6E41F4E135300F501B1 /* CryptoCurrencyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyService.swift; sourceTree = "<group>"; };
 		ACB732C81FDF0D3D00D47490 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACC2941720990914002DCC32 /* NSPopoverExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPopoverExtensions.swift; sourceTree = "<group>"; };
-		C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coin Menu Bar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar.release.xcconfig"; sourceTree = "<group>"; };
+		BFC49D5FBC53C598105ED0F9 /* Pods-CoinMenuBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMenuBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinMenuBar/Pods-CoinMenuBar.release.xcconfig"; sourceTree = "<group>"; };
+		BFE9E6C80E107A449765484B /* Pods-CoinMenuBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinMenuBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinMenuBar/Pods-CoinMenuBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				191849AFF1E8B446DAE08DF9 /* Pods_Coin_Menu_Bar.framework in Frameworks */,
+				9265D449BD5E9DE3298068B9 /* Pods_CoinMenuBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +54,8 @@
 		0C0042C1B98BF0AA507B59D2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */,
-				C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */,
+				BFE9E6C80E107A449765484B /* Pods-CoinMenuBar.debug.xcconfig */,
+				BFC49D5FBC53C598105ED0F9 /* Pods-CoinMenuBar.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -63,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				123E1CD1393A8EA028205534 /* Pods_Coin_Menu_Bar.framework */,
+				22F2D155780066A4FAEC66F2 /* Pods_CoinMenuBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC59A1E61F4E06DB00AF3B86 /* Coin Menu Bar */ = {
+		AC59A1E61F4E06DB00AF3B86 /* CoinMenuBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Coin Menu Bar" */;
+			buildConfigurationList = AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "CoinMenuBar" */;
 			buildPhases = (
 				A55038F46E989A99469BF177 /* [CP] Check Pods Manifest.lock */,
 				AC59A1E31F4E06DB00AF3B86 /* Sources */,
@@ -177,7 +179,7 @@
 			);
 			dependencies = (
 			);
-			name = "Coin Menu Bar";
+			name = CoinMenuBar;
 			productName = LitecoinMenuBar;
 			productReference = AC59A1E71F4E06DB00AF3B86 /* Coin Menu Bar.app */;
 			productType = "com.apple.product-type.application";
@@ -213,7 +215,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC59A1E61F4E06DB00AF3B86 /* Coin Menu Bar */,
+				AC59A1E61F4E06DB00AF3B86 /* CoinMenuBar */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +239,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoinMenuBar/Pods-CoinMenuBar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -246,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coin Menu Bar/Pods-Coin Menu Bar-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinMenuBar/Pods-CoinMenuBar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55038F46E989A99469BF177 /* [CP] Check Pods Manifest.lock */ = {
@@ -260,7 +262,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Coin Menu Bar-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CoinMenuBar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,7 +428,7 @@
 		};
 		AC59A1F71F4E06DB00AF3B86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99D74EB441746D412D49FC91 /* Pods-Coin Menu Bar.debug.xcconfig */;
+			baseConfigurationReference = BFE9E6C80E107A449765484B /* Pods-CoinMenuBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -439,7 +441,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.CoinMenuBar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Coin Menu Bar";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
@@ -448,7 +450,7 @@
 		};
 		AC59A1F81F4E06DB00AF3B86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C99CDEC1DFE4E8F140049A34 /* Pods-Coin Menu Bar.release.xcconfig */;
+			baseConfigurationReference = BFC49D5FBC53C598105ED0F9 /* Pods-CoinMenuBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -461,7 +463,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = balazs630.CoinMenuBar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Coin Menu Bar";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.2;
@@ -480,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "Coin Menu Bar" */ = {
+		AC59A1F61F4E06DB00AF3B86 /* Build configuration list for PBXNativeTarget "CoinMenuBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC59A1F71F4E06DB00AF3B86 /* Debug */,
